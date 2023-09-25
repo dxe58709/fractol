@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/08 16:38:30 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/08 17:47:55 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/09/25 17:43:39 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 AR = ar rcs
 OBJS = $(SRCS:.c=.o)
 
-MINILIBX	=	libmlx.dylib
+MINILIBX = libmlx.dylib
 
 all: $(NAME)
 
