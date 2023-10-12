@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+         #
+#    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/08 16:38:30 by nsakanou          #+#    #+#              #
-#    Updated: 2023/09/25 17:43:39 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/12 17:32:11 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,24 +16,31 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
+
+SRCS = main.c
+
 OBJS = $(SRCS:.c=.o)
 
-MINILIBX = libmlx.dylib
+# MINILIBX = libmlx.dylib
+
+# Printf+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+PRINTFDIR   =   printf
+PRINTF      =   $(PRINTFDIR)/libftprintf
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
-	$(CC) $(OBJS) $(CFLAGS) $(MINILIBX) -o $@
+$(NAME): $(OBJS) $(LIBFT) 
+	$(CC) $(OBJS) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $@
 
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(DEBUG):
-	make all
-	$(CC) $(OBJS) $(CFLAGS_DEBUG) $(MINILIBX) -o $(NAME)
+#$(DEBUG):
+#	make all
+#	$(CC) $(OBJS) $(CFLAGS_DEBUG) $(MINILIBX) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(B_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/09/25 17:43:54 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:31:40 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <string.h>
+# include <stdio.h>
 # include <ctype.h>
 
 # define MANDEL 1
