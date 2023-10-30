@@ -6,25 +6,24 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 13:34:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/20 19:51:07 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/30 17:43:47 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
 # Printf+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
-PRINTFDIR	=	./printf
+PRINTFDIR	=	./ft_printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR) -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR) 
 RM = rm -f
 
-SRCS =	circle.c \
+SRCS =	atoi_fr.c \
 		close.c \
 		fractol.c \
 		fractol_utils.c \
-		ft_atoi.c \
 		main.c
 
 OBJS = $(SRCS:%.c=%.o)
@@ -33,9 +32,7 @@ all: $(NAME)
 
 
 $(NAME): $(OBJS) $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-# $(NAME): $(OBJS) $(LIBFT) 
-# 	$(CC) $(OBJS) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
