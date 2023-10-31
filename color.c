@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_utils.c                                    :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 15:19:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 16:00:28 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/10/31 19:53:08 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/10/31 19:58:17 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	ft_isdigit(int c)
+void	set_color(t_vars *m, int i, int x, int y)
 {
-	return ('0' <= c && c <= '9');
-}
-
-int	ft_isspace(int c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
-}
-
-void	ft_error(void)
-{
-	ft_printf("error.\n");
-	exit(-1);
-}
-
-void	memory_error(void)
-{
-	ft_printf("Memory allocation failed.\n");
-	exit(-1);
+	if (m->color % 5 == 0)
+		color_1(m, i, x, y);
+	else if (m->color % 5 == 1)
+		color_2(m, i, x, y);
+	else if (m->color % 5 == 2)
+		color_3(m, i, x, y);
+	else if (m->color % 5 == 3)
+		color_4(m, i, x, y);
+	else if (m->color % 5 == 4)
+		color_5(m, i, x, y);
 }

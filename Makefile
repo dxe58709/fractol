@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 13:34:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/30 17:43:47 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/10/31 17:36:43 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ PRINTFDIR	=	./ft_printf
 PRINTF		=	$(PRINTFDIR)/libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR) 
+CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR)
 RM = rm -f
 
-SRCS =	atoi_fr.c \
-		close.c \
+SRCS =	atof.c \
+		close_window.c \
 		fractol.c \
 		fractol_utils.c \
 		main.c
