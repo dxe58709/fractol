@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:34:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 19:47:29 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:21:52 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	vars.height = 500;
 	vars.width = 500;
 	vars.depth = 15;
-	vars.mag = 6;
+	vars.mag = 4;
 
 	//MLX（MinilibX）ライブラリを初期化し、mlx 構造体にその初期化されたポインタを代入
 	vars.mlx = mlx_init();

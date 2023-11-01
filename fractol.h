@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 20:04:46 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:50:01 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@
 # include <stdbool.h>
 # include <float.h>
 
-typedef struct s_complex
-{
-	double	x;
-	double	y;
-	double	cre;
-	double	cim;
-}t_complex;
-
 typedef struct s_vars
 {
 	void		*mlx;
@@ -48,7 +40,10 @@ typedef struct s_vars
 	int			depth;
 	int			color;
 	double		mag;
-	t_complex	comp;
+	double		x;
+	double		y;
+	double		cre;
+	double		cim;
 }t_vars;
 
 
