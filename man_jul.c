@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:07:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 18:47:59 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:06:22 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // 	vars.mag = 6;
 // 	vars.cre = cre;
 // 	vars.cim = cim;
-// 	vars.status = JULIA;
+// 	vars.name = JULIA;
 // 	vars.x = vars.height / 2;
 // 	vars.y = vars.width / 2;
 // 	vars.mlx = mlx_init();
@@ -51,7 +51,7 @@
 // 	vars.hor = 0;
 // 	vars.cre = -1;
 // 	vars.cim = -1;
-// 	vars.status = MANDEL;
+// 	vars.name = MANDEL;
 // 	vars.x = vars.height / 2;
 // 	vars.y = vars.width / 2;
 // 		//MLX（MinilibX）ライブラリを初期化し、mlx 構造体にその初期化されたポインタを代入

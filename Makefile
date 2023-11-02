@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 13:34:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/10/31 17:36:43 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/11/02 14:31:02 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR)
 RM = rm -f
 
 SRCS =	atof.c \
+		color.c \
 		close_window.c \
 		fractol.c \
 		fractol_utils.c \

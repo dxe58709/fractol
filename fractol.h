@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/01 15:50:01 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:05:33 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ typedef struct s_vars
 	void		*win;
 	void		*img;
 	char		*addr;
-	char		*status;
+	char		*name;
 	int			bits_per_pixel;
 	int			line_length;
+	int			endian;
 	int			height;
 	int			width;
 	int			depth;
@@ -63,4 +64,5 @@ int		close_window_x(t_vars *vars);
 int		img_put2(t_vars *vars);
 int		mouse_hook(int button, int x, int y, t_vars *vars);
 
+void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 #endif

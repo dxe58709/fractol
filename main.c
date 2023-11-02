@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:34:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/01 16:21:52 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:40:10 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,26 @@ int	main(void)
 {
 	t_vars	vars;
 
-	vars.height = 500;
-	vars.width = 500;
+	vars.height = 800;
+	vars.width = 800;
 	vars.depth = 15;
 	vars.mag = 4;
+	vars.color = 0;
 
 	//MLX（MinilibX）ライブラリを初期化し、mlx 構造体にその初期化されたポインタを代入
 	vars.mlx = mlx_init();
-	//新しいウィンドウを作成↓800×600ピクセル
+	//新しいウィンドウを作成↓800×800ピクセル
 	vars.win = mlx_new_window(vars.mlx, 800, 800, "fractol");
+	vars.img = mlx_new_image(vars.mlx, vars.width, vars.height);
+	vars.addr = mlx_get_data_addr(vars.img, &vars.bits_per_pixel, \
+			&vars.line_length, &vars.endian);
 	img_put2(&vars);
 	mlx_mouse_hook(vars.win, mouse_hook, &vars);
-	//esc終了
 	mlx_key_hook(vars.win, close_window_esc, &vars);
-	//x終了
 	mlx_hook(vars.win, 17, 1L << 0, close_window_x, (void *)&vars);
 	mlx_loop(vars.mlx);
-	return (0);
+	exit (0);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	t_vars	vars;
-
-// 	if (check_args(argc, argv) && init_fractal(argv, &vars.f) && init_mlx(&vars))
-// 	{
-// 		mlx_loop_hook(vars.mlx, draw_and_put_image, &vars);
-// 		mlx_key_hook(vars.win, close_window_esc, &vars);
-// 		mlx_hook(vars.win, 17, 1L << 0, close_window_x, (void *)&vars);
-// 		mlx_mouse_hook(vars.win, mouse_hook, &vars);
-// 		mlx_loop(vars.mlx);
-// 		return (finalized_with_success(&vars));
-// 	}
-// 	return (ERROR);
-// }
 
 //メモリリーク
 // __attribute__((destructor))
