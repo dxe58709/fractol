@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:19:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 16:00:28 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:55:49 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,22 @@ void	ft_error(void)
 	exit(-1);
 }
 
-void	memory_error(void)
+void	argv_error(void)
 {
-	ft_printf("Memory allocation failed.\n");
+	ft_printf("argv_error.\n");
 	exit(-1);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (s1[i] != s2[i] || s1[i] == '\0')
+			return (((unsigned char)s1[i]) - ((unsigned char)s2[i]));
+		i++;
+	}
+	return (0);
 }

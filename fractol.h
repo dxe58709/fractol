@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/02 17:05:33 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:09:53 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,10 @@ typedef struct s_vars
 	int			endian;
 	int			height;
 	int			width;
-	int			depth;
-	int			color;
 	double		mag;
-	double		x;
-	double		y;
 	double		cre;
 	double		cim;
 }t_vars;
-
 
 # define MANDEL 1
 # define JULIA 2
@@ -54,7 +49,8 @@ typedef struct s_vars
 int		ft_isdigit(int c);
 int		ft_isspace(int c);
 void	ft_error(void);
-void	memory_error(void);
+void	argv_error(void);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 double	ft_atof(const char *str);
 

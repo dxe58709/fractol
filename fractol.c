@@ -6,11 +6,19 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 19:47:37 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/02 17:05:51 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:04:42 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+//pixel
+void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = vars->addr + (y * vars->line_length + x * (vars->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}
 
 //マウスのボタンイベント（ボタンがクリックされたときなどの操作）を処理するための関数
 int	mouse_hook(int button, int x, int y, t_vars *vars)
@@ -20,7 +28,7 @@ int	mouse_hook(int button, int x, int y, t_vars *vars)
 	if (vars->mag == 0.0)
 		vars->mag = 0.000001;
 	if (button == 5)//下スクロール
-		vars->mag *= 0.9;
+		vars->mag *= 0.8;
 	else if (button == 4)//上スクロール
 		vars->mag *= 1.2;
 	else
@@ -35,7 +43,7 @@ int	mouse_hook(int button, int x, int y, t_vars *vars)
 //複素数Zの実部（x）と虚部（`y）
 //i; 反復回数
 
-void	check_mandel(t_vars *vars, int col, int row)
+int	check_mandel(t_vars *vars, int col, int row)
 {
 	double	x;
 	double	y;
@@ -47,20 +55,25 @@ void	check_mandel(t_vars *vars, int col, int row)
 	i = 0;
 	vars->cre = (col - vars->width / 2.0) / (vars->width / vars->mag);
 	vars->cim = (row - vars->height / 2.0) / (vars->height / vars->mag);
-	while (x * x + y * y <= 4 && i < vars->depth)//円の内部かどうか
+	while (x * x + y * y <= 4 && i < 200)//円の内部かどうか
 	{
 		tmp = x * x - y * y + vars->cre;
 		y = 2 * x * y + vars->cim;
 		x = tmp;
-		my_mlx_pixel_put(vars, col, row, vars->color);
 		i++;
 	}
-	//指定の座標 (col, row) がマンデルブロ集合内の点であるかどうか
-	if (x * x + y * y <= 4)
-		my_mlx_pixel_put(vars, col, row, vars->color);
+	if (x * x + y * y > 4)
+	{
+		if (1 < i)
+			return (0x9900cc + i * 100);
+		else
+			return (0x9900cc);
+	}
+	else
+		return (0x000000);
 }
 
-void	check_julia(t_vars *vars, int col, int row)
+int	check_julia(t_vars *vars, int col, int row)
 {
 	double	x;
 	double	y;
@@ -72,17 +85,23 @@ void	check_julia(t_vars *vars, int col, int row)
 	i = 0;
 	vars->cre = -0.7;// ジュリア集合の特定の初期値
 	vars->cim = 0.2;// ジュリア集合の特定の初期値
-
-	while (x * x + y * y <= 4 && i < vars->depth)
+	while (x * x + y * y <= 4 && i < 200)
 	{
 		tmp = x * x - y * y + vars->cre;
 		y = 2 * x * y + vars->cim;
 		x = tmp;
-		my_mlx_pixel_put(vars, col, row, vars->color);//vars->mlx, vars->win, col, row, 0x00FF00 + i * 100
 		i++;
+		// printf("DEBUG [%s]{%d}: %f, %f, %d, %d, %d\n", __func__, __LINE__, y, x, col, row, i);
 	}
-	if (x * x + y * y <= 4)
-		my_mlx_pixel_put(vars, col, row, vars->color);//0xFF0000
+	if (x * x + y * y > 4)
+	{
+		if (1 < i)
+			return (0x9900cc + i * 100);
+		else
+			return (0x9900cc);
+	}
+	else
+		return (0x000000);
 }
 
 int	img_put2(t_vars *vars)
@@ -93,20 +112,14 @@ int	img_put2(t_vars *vars)
 
 	vars->height = 800;
 	vars->width = 800;
-	vars->depth = 25;
-
 	row = 0;
 	while (row < vars->height)
 	{
 		col = 0;
 		while (col < vars->width)
 		{
-			// if (vars->name == MANDEL)
-			// 	color = check_color_m(vars, x, y);
-			// if (vars->name == JULIA)
-			// 	color = check_color_j(vars, x, y);
-			//check_mandel(vars, col, row);
-			//check_julia(vars, col, row);
+			// color = check_mandel(vars, col, row);
+			// color = check_julia(vars, col, row);
 			my_mlx_pixel_put(vars, col, row, color);
 			col++;
 		}
