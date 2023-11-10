@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 19:47:37 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/10 15:19:18 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:19:58 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,15 @@ int	mouse_hook(int button, int x, int y, t_vars *vars)
 	(void)y;
 	if (vars->mag == 0.0)
 		vars->mag = 0.000001;
-	if (button == 5)//下スクロール
+	if (button == 5)
 		vars->mag *= 0.8;
-	else if (button == 4)//上スクロール
+	else if (button == 4)
 		vars->mag *= 1.2;
 	else
 		return (0);
 	img_put2(vars);
 	return (0);
 }
-//col（列）: 複素数平面上で横方向
-//row（行）: 複素数平面上で縦方向
-//cre; 定数Cの実部(x方向)
-//cim; 定数Cの虚部(y方向)
-//複素数Zの実部（x）と虚部（`y）
-//i; 反復回数
 
 unsigned int	check_mandel(t_vars *vars, int col, int row)
 {
@@ -54,15 +48,14 @@ unsigned int	check_mandel(t_vars *vars, int col, int row)
 	i = 0;
 	vars->cre = (col - vars->width / 2.0) / (vars->width / vars->mag);
 	vars->cim = (row - vars->height / 2.0) / (vars->height / vars->mag);
-	while (x * x + y * y <= 4 && i < 200)//円の内部かどうか
+	while (x * x + y * y <= 4 && i < 200)
 	{
 		tmp = x * x - y * y + vars->cre;
 		y = 2 * x * y + vars->cim;
 		x = tmp;
 		i++;
 	}
-	return (0x0000cc + i * 100);
-	// return (0x9900cc + i * 100);
+	return (0x9900cc + i * 100);
 }
 
 unsigned int	check_julia(t_vars *vars, int col, int row)
@@ -75,18 +68,16 @@ unsigned int	check_julia(t_vars *vars, int col, int row)
 	x = (col - vars->width / 2.0) / (vars->width / vars->mag);
 	y = (row - vars->height / 2.0) / (vars->height / vars->mag);
 	i = 0;
-	vars->cre = -0.9 + vars->check_cre;// ジュリア集合の特定の初期値
-	vars->cim = 0.2 + vars->check_cim;// ジュリア集合の特定の初期値
+	vars->cre = -0.9 + vars->check_cre;
+	vars->cim = 0.2 + vars->check_cim;
 	while (x * x + y * y <= 4 && i < 200)
 	{
 		tmp = x * x - y * y + vars->cre;
 		y = 2 * x * y + vars->cim;
 		x = tmp;
 		i++;
-		// printf("DEBUG [%s]{%d}: %f, %f, %d, %d, %d\n", __func__, __LINE__, y, x, col, row, i);
 	}
-	// return (0x9900cc + i * 100);
-	return (0x0000cc + i * 100);
+	return (0x9900cc + i * 100);
 }
 
 int	img_put2(t_vars *vars)
@@ -115,14 +106,3 @@ int	img_put2(t_vars *vars)
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, 0, 0);
 	return (0);
 }
-
-// 	if (x * x + y * y > 4)
-// 	{
-// 		if (1 < i)
-// 			return (0x9900cc + i * 100);
-// 		else
-// 			return (0x9900cc);
-// 	}
-// 	else
-// 		return (0x000000);
-// }

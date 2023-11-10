@@ -6,11 +6,20 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:34:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/10 15:24:41 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:26:14 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	hooks_and_loop(t_vars *vars)
+{
+	mlx_mouse_hook(vars->win, mouse_hook, vars);
+	mlx_key_hook(vars->win, close_window_esc, vars);
+	mlx_hook(vars->win, 17, 1L << 0, close_window_x, (void *)vars);
+	mlx_loop(vars->mlx);
+	exit(0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -35,14 +44,6 @@ int	main(int argc, char **argv)
 	else
 		argv_error();
 	img_put2(&vars);
-	mlx_mouse_hook(vars.win, mouse_hook, &vars);
-	mlx_key_hook(vars.win, close_window_esc, &vars);
-	mlx_hook(vars.win, 17, 1L << 0, close_window_x, (void *)&vars);
-	mlx_loop(vars.mlx);
-	exit (0);
+	hooks_and_loop(&vars);
 }
 
-// __attribute__((destructor))
-// static void destructor() {
-// 	system("leaks -q fractol");
-// }
