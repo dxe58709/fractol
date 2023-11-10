@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:34:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/10 17:26:14 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:02:51 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,3 @@ int	main(int argc, char **argv)
 	img_put2(&vars);
 	hooks_and_loop(&vars);
 }
-

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 19:47:37 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/10 17:19:58 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:01:02 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ unsigned int	check_julia(t_vars *vars, int col, int row)
 	x = (col - vars->width / 2.0) / (vars->width / vars->mag);
 	y = (row - vars->height / 2.0) / (vars->height / vars->mag);
 	i = 0;
-	vars->cre = -0.9 + vars->check_cre;
-	vars->cim = 0.2 + vars->check_cim;
+	vars->cre = vars->check_cre;
+	vars->cim = -(vars->check_cim);
 	while (x * x + y * y <= 4 && i < 200)
 	{
 		tmp = x * x - y * y + vars->cre;

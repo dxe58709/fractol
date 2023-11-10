@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/11/10 15:27:25 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:49:17 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ typedef struct s_vars
 	double		mag;
 	double		cre;
 	double		cim;
-	int			check_cre;
-	int			check_cim;
+	double		check_cre;
+	double		check_cim;
 }t_vars;
 
 # define MANDEL 1
