@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:55:24 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 15:51:27 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:57:31 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static double	read_integer(const char *str, int *i)
 	double	nb;
 
 	nb = 0;
+	if (!ft_isdigit(str[*i]) || (str[*i] == '.' && str[*i + 1] == '\0'))
+		ft_error();
 	while (str[*i] && ft_isdigit(str[*i]) && str[*i] != '.')
 	{
 		nb = nb * 10.0 + (str[*i] - '0');
@@ -51,6 +53,8 @@ static double	read_decimals(const char *str, int *i)
 	if (str[*i] == '.')
 	{
 		(*i)++;
+		if (str[*i] == '\0')
+			ft_error();
 		while (str[*i] && ft_isdigit(str[*i]))
 		{
 			nb = nb + ((str[*i] - '0') * decimals);
@@ -70,9 +74,9 @@ double	ft_atof(const char *str)
 	sign = 1;
 	i = skip_sp_sign(str, &sign);
 	nb = read_decimals(str, &i);
-	if (nb < -DBL_MAX)
+	if (nb < -10000000000)//-DBL_MXの値がでかすぎるから、ある程度の値で弾いた(発散するため)
 		ft_error();
-	if (nb > DBL_MAX)
+	if (nb > 10000000000)//DBL_MXの値がでかすぎるから、ある程度の値で弾いた(発散するため)
 		ft_error();
 	if (!ft_isdigit(str[i]) && str[i])
 		ft_error();
