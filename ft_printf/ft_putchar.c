@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close.c                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 18:06:30 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/10/31 15:59:58 by nsakanou         ###   ########.fr       */
+/*   Created: 2023/06/08 16:55:19 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/16 14:12:22 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "ft_printf.h"
 
-int	close_window_esc(int keycode, t_vars *vars)
+ssize_t	ft_putchar(int fd, char c)
 {
-	if (keycode == 53)
-	{
-		mlx_destroy_window(vars->mlx, vars->win);
-		exit(0);
-	}
-	return (0);
-}
-
-int	close_window_x(t_vars *vars)
-{
-	(void)vars;
-	exit(0);
+	return (write(fd, &c, 1));
 }
