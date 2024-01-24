@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:34:48 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/12/05 20:47:23 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:49:53 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	hooks_and_loop(t_vars *vars)
 {

@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:55:24 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/12/06 14:31:27 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:35:30 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 static int	skip_sp_sign(const char *str, int *sign)
 {

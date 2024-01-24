@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 19:47:37 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/12/05 14:51:27 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:35:56 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color)
 {

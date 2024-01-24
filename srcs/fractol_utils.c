@@ -6,11 +6,11 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:19:16 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/12/05 15:22:12 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:36:11 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	ft_isdigit(int c)
 {

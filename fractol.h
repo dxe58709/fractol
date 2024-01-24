@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 16:40:06 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/12/05 15:44:25 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:49:28 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 
 # include "ft_printf.h"
-# include <mlx.h>
+# include "../minilibx_opengl_20191021/mlx.h"
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>

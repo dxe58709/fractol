@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 13:34:27 by nsakanou          #+#    #+#              #
-#    Updated: 2023/12/05 20:46:25 by nsakanou         ###   ########.fr        #
+#    Updated: 2024/01/24 15:34:49 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I $(PRINTFDIR)
 RM = rm -f
 
-SRCS =	atof.c \
-		close_window.c \
-		fractol.c \
-		fractol_utils.c \
-		main.c
+SRCS =	srcs/close_window.c \
+	srcs/fractol_utils.c \
+	srcs/main.c \
+	srcs/fractol.c \
+	srcs/atof.c
 
 OBJS = $(SRCS:%.c=%.o)
 
