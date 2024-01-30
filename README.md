@@ -16,7 +16,8 @@
 First, clone this repository and `cd` into it:
 
 ```zsh
-$ git clone https://github.com/dxe58709/fract-ol; cd fract-ol
+#!/bin/zsh
+git clone https://github.com/dxe58709/fract-ol; cd fract-ol
 ```
 
 Compile using `make`:
