@@ -41,5 +41,5 @@ These represent a complex number that will change the shape of the Julia fractal
 They must be fractional numbers between 2.0 and -2.0. For example:
 
 ```shell
-./fractol J 0.285 -0.01
+./fractol julia 0.285 -0.01
 ```
