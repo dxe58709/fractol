@@ -34,6 +34,7 @@ Note that this project was tested on Linux only. It may run on MacOS with small 
 ## Executing Fract-ol
 At execution time, you must specify a fractal to display. You may also provide other optional parameters:
 ```zsh
+#!/bin/zsh
 ./fractol <type> <options>
 ```
 
@@ -46,5 +47,6 @@ These represent a complex number that will change the shape of the Julia fractal
 They must be fractional numbers between 2.0 and -2.0. For example:
 
 ```shell
+#!/bin/zsh
 ./fractol julia 0.285 -0.01
 ```
