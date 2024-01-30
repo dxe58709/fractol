@@ -3,7 +3,8 @@
 </h1>
 
 <h2 align="center">
-<img width="600" alt="スクリーンショット 2024-01-30 14 43 40" src="https://github.com/dxe58709/fractol/assets/133973097/bbe95d81-fd04-4f97-bc05-6444fb3c9827">
+<img width="600" alt="dxe59709_fractol" src="https://github.com/dxe58709/fractol/assets/133973097/e4b716ec-4eb7-43c0-a023-508d184df062">
+
 </h2>
 
 ## Summary
