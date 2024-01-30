@@ -2,6 +2,10 @@
 	fract-ol
 </h1>
 
+<h2 align="center">
+<img width="600" alt="スクリーンショット 2024-01-30 14 43 40" src="https://github.com/dxe58709/fractol/assets/133973097/bbe95d81-fd04-4f97-bc05-6444fb3c9827">
+</h2>
+
 ## Summary
 > <i> One of the first graphical projects at 42 school, fract-ol generates beautiful fractals from the complex numbers of an iterative mathematical construct.
 > A fractal is a fragmented geometrical figure that infinitely repeats itself at smaller scales.
