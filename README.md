@@ -3,8 +3,7 @@
 </h1>
 
 <h2 align="center">
-<img width="600" alt="dxe59709_fractol" src="https://github.com/dxe58709/fractol/assets/133973097/e4b716ec-4eb7-43c0-a023-508d184df062">
-
+	<img src="https://github.com/dxe58709/dxe58709/blob/main/42_badges/fract-ole.png" alt="42 fractol" />
 </h2>
 
 ## Summary
@@ -22,6 +21,7 @@ git clone https://github.com/dxe58709/fract-ol; cd fract-ol
 
 Compile using `make`:
 ```
+#!/bin/zsh
 make
 ```
 
@@ -33,6 +33,7 @@ Note that this project was tested on Linux only. It may run on MacOS with small 
 ---
 
 ## Executing Fract-ol
+
 At execution time, you must specify a fractal to display. You may also provide other optional parameters:
 ```zsh
 #!/bin/zsh
@@ -51,3 +52,7 @@ They must be fractional numbers between 2.0 and -2.0. For example:
 #!/bin/zsh
 ./fractol julia 0.285 -0.01
 ```
+### mandelbrot
+<h2 align="center">
+<img width="600" alt="dxe59709_fractol" src="https://github.com/dxe58709/fractol/assets/133973097/e4b716ec-4eb7-43c0-a023-508d184df062">
+</h2>
