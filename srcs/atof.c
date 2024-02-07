@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:55:24 by nsakanou          #+#    #+#             */
-/*   Updated: 2024/01/24 15:35:30 by nsakanou         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:20:47 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ double	ft_atof(const char *str)
 	sign = 1;
 	i = skip_sp_sign(str, &sign);
 	nb = read_decimals(str, &i);
-	if (nb < -10000000000)//-DBL_MAXの値が大きすぎて適当な値で弾いた
+	if (nb < -10000000000)
 		ft_error();
-	if (nb > 10000000000)//DBL_MAXの値が大きすぎて(発散するから問題ない)適当な値で弾いた
+	if (nb > 10000000000)
 		ft_error();
 	if (!ft_isdigit(str[i]) && str[i])
 		ft_error();
